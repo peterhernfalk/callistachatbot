@@ -1,1 +1,1 @@
-<?php include_once("chatbot.html"); ?>
+<?php include_once("chatbox.html"); ?>
