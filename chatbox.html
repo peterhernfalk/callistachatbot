@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callistas chatbot - Ally</title>
+
+    <script src="javascript/chatbox_behaviour.js"></script>
+    <script src="javascript/chatbot_communication.js"></script>    <!-- Common for chatbot #1 and #2 -->
+    <link href="css/chatbox.css" rel="stylesheet">
+    <link href="css/callista.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="toolbar">
+    <br>
+    <input type="button" id="CallistaChat" onclick="showHideChatbox()" value="Chatta med oss" style="font-size:20px;background-color:transparent;color:white;">
+    <br>
+    <!--label style="background-color:transparent;color:white;"><input type="checkbox" id="useSpeech" name="useSpeech" value="false" onclick="speechUsage()">Röstsvar</label-->
+</div>
+
+<section>
+    <br>
+    <div id='bodybox'>
+        <div id='chatborder'>
+            <div id="conversation" class="chatlog"></div>
+        </div>
+
+        <div id="input_and_teasers">
+            <!-- Input -->
+            <input type="text" name="chat" id="chatbox" placeholder="Hej! Chatta med oss" onfocus="placeHolder()" class="textinput">
+            <a id="help" class="helpImage "href="#" onclick="displayHelpInfo()"><img src="images/help.png"></a>
+
+            <!-- Teasers -->
+            <a id="eventAbout" class="ce-button ce-background-secondarybutton" href="https://callistaenterprise.se/om/" target="_blank">Om Callista</a>
+            <a id="eventTeaser" class="ce-button ce-background-secondary1" href="https://callistaenterprise.se/event" target="_blank">Event</a>
+            <a id="linkTeaser" class="ce-linkbutton ce-background-secondarybutton" href="https://callistaenterprise.se/event" target="_blank">Link</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    //-----Global script variables
+    var botId = "1";
+    var displayBlogCategories = false;
+    var linkCount = 0;
+    var nodeurl = getNodeUrl(botId);
+    var result = "";
+    var terminalLayout = false;
+
+    //-----Initial settings
+    //setLanguage(nodeurl+'/language', '46')
+    document.getElementById("bodybox").style.display = "none";
+    document.getElementById("chatborder").style.display = "none";
+    document.getElementById("chatbox").style.display = "none";
+    //document.getElementById("useSpeech").value = document.getElementById("useSpeech").checked;
+    //talking = document.getElementById("useSpeech").checked;
+
+    document.getElementById("eventAbout").style.display = "none";
+    document.getElementById("eventTeaser").style.display = "none";
+    document.getElementById("linkTeaser").style.display = "none";
+
+    //-----textarea
+    var botOut = botChat.value;
+    document.getElementsByTagName("textarea")[0] = botChat
+
+
+</script>
+
+</body>
+</html>
