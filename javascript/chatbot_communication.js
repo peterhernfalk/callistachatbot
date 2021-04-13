@@ -38,11 +38,14 @@
 
         endpoint = url + "/request";
 
-        const http = new XMLHttpRequest()
-        http.open('POST', endpoint, false)
-        http.setRequestHeader('Content-type', 'application/json')
-        http.send(JSON.stringify(params))
+        const http = new XMLHttpRequest();
+        http.open('POST', endpoint, false);
+        http.setRequestHeader('Content-type', 'application/json');
+        http.send(JSON.stringify(params));
+        alert("efter anrop");
 
         return http.responseText;
+
+
     }
 
