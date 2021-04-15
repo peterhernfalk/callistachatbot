@@ -174,6 +174,7 @@ function displayCommandInfo() {
     "Tangentkommandon:<br>" +
     "pil-upp &nbsp;&nbsp; Lägger den senaste inmatningen i inmatningsfältet<br>" +
     "pil-ner &nbsp;&nbsp; Tömmer inmatningsfältet</i><br>";
+
     document.getElementById("conversation").scrollTop = document.getElementById("conversation").scrollHeight;
 }
 
