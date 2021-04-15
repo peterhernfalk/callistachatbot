@@ -1,15 +1,14 @@
 
     function getNodeUrl(botId) {
-        //nodeurl = "http://127.0.0.1:4001"
-        nodeurl = ""
-        switch (botId) {
+        nodeurl = "https://callistabackend.herokuapp.com"
+        /*switch (botId) {
             case "1":
                 nodeurl = "https://callistabackend.herokuapp.com"
                 break;
             case "2":
                 nodeurl = "http://127.0.0.1:4001"
                 break;
-        }
+        }*/
         return nodeurl;
     }
 
@@ -45,4 +44,3 @@
 
         return http.responseText;
     }
-

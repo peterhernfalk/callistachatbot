@@ -43,7 +43,6 @@ function keyPress(e) {
 }
 
 function getLastUserRequest() {
-    //document.getElementById("chatbox").focus();
     document.getElementById("chatbox").value = lastUserMessage;
 
     var input = document.getElementById('chatbox');
@@ -56,7 +55,6 @@ function clearLastUserRequest() {
 }
 
 function moveCursorToEnd(el) {
-    //alert(el.createTextRange);
     if (typeof el.selectionStart == "number") {
         el.selectionStart = el.selectionEnd = el.value.length;
     } else if (typeof el.createTextRange == "undefined") {  //!=
@@ -70,10 +68,8 @@ function moveCursorToEnd(el) {
 function setCaretPosition(ctrl, pos) {
   // Modern browsers
   if (ctrl.setSelectionRange) {
-    //alert(pos);   //is 4 for java
     ctrl.focus();
     ctrl.setSelectionRange(pos, pos);
-    //ctrl.setSelectionRange(0, 3), ctrl.focus();
 
   // IE8 and below
   } else if (ctrl.createTextRange) {
@@ -104,7 +100,6 @@ function newUserRequest() {
 
         if (chatboxCommand(lastUserMessage) == true) {
             if (lastUserMessage != "cmd") {
-                //document.getElementById("conversation").innerHTML += "<br>Cmd: '" + lastUserMessage+"': OK<br>";
                 document.getElementById("conversation").scrollTop = document.getElementById("conversation").scrollHeight;
             }
         } else {
@@ -170,8 +165,6 @@ function displayHelpInfo() {
 function displayCommandInfo() {
     document.getElementById("conversation").innerHTML += "<br><b><i>Chatbot-kommandon:</b><br>" +
     "cmd &nbsp;&nbsp; Visar vilka kommandon som stöds av chatboten<br>" +
-    "bot1 &nbsp;&nbsp; Använder bot med id: 1 (default)<br>" +
-    "bot2 &nbsp;&nbsp; Använder bot med id: 2<br>" +
     "color-1 eller c1 &nbsp;&nbsp; Standard-utseende aktiverat<br>" +
     "color-2 eller c2 &nbsp;&nbsp; Terminal-utseende aktiverat<br>" +
     "default &nbsp;&nbsp; Visar chatboxen med standardinställningar<br>" +
@@ -213,16 +206,6 @@ function displayTeasers(parsedBotMessage) {
 function chatboxCommand(userInput) {
     commandExecuted = false;
     switch (userInput.toLowerCase()) {
-        case "bot1":
-            botId = "1";
-            getNodeUrl(botId);
-            commandExecuted = true;
-            break;
-        case "bot2":
-            botId = "2";
-            getNodeUrl(botId);
-            commandExecuted = true;
-            break;
         case "cmd":
             displayCommandInfo();
             commandExecuted = true;
