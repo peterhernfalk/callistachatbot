@@ -1,14 +1,6 @@
 
     function getNodeUrl(botId) {
         nodeurl = "https://callistabackend.herokuapp.com"
-        /*switch (botId) {
-            case "1":
-                nodeurl = "https://callistabackend.herokuapp.com"
-                break;
-            case "2":
-                nodeurl = "http://127.0.0.1:4001"
-                break;
-        }*/
         return nodeurl;
     }
 
@@ -37,10 +29,13 @@
 
         endpoint = url + "/request";
 
-        const http = new XMLHttpRequest()
-        http.open('POST', endpoint, false)
-        http.setRequestHeader('Content-type', 'application/json')
-        http.send(JSON.stringify(params))
+        const http = new XMLHttpRequest();
+        http.open('POST', endpoint, false);
+        http.setRequestHeader('Content-type', 'application/json');
+        http.send(JSON.stringify(params));
+        alert("efter anrop");
 
         return http.responseText;
+
+
     }

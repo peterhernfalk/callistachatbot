@@ -170,8 +170,6 @@ function displayCommandInfo() {
     "default &nbsp;&nbsp; Visar chatboxen med standardinställningar<br>" +
     "pres+ &nbsp;&nbsp; Visar vilka listade bloggar som innehåller presentationer<br>" +
     "pres- &nbsp;&nbsp; Döljer vilka listade bloggar som innehåller presentationer<br>" +
-    "speech+ &nbsp;&nbsp; röstsvar aktiverat<br>" +
-    "speech- &nbsp;&nbsp; röstsvar avaktiverat<br>" +
     "<br>" +
     "Tangentkommandon:<br>" +
     "pil-upp &nbsp;&nbsp; Lägger den senaste inmatningen i inmatningsfältet<br>" +
