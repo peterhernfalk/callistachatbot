@@ -1,8 +1,7 @@
 
     // 2do
     function getNodeUrl(botId) {
-        nodeurl = "https://callistabackend.herokuapp.com"
-        return nodeurl;
+        return "https://callistabackend.herokuapp.com";
     }
 
 
