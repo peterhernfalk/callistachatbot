@@ -49,35 +49,13 @@ body {
   box-shadow: 5px 5px 5px grey;
   border-radius: 15px;
   overflow: auto;
-  resize: horizontal;  //both;
-  direction: rtl;
+  //resize: horizontal;  //both;
+  //direction: rtl;
   position: fixed;
   right: 0;
   margin-bottom: 100px;
   bottom: 100;
 }
-
-/*#bodybox {
-  //margin: auto;
-  //margin-left: 1000px;
-  //margin-right: 100px;
-  margin-top: 35px;
-  width: 400px;
-  //max-width: 800px;
-  font: 15px arial, sans-serif;
-  background-color: white;
-  border-style: solid;
-  border-width: 1px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
-  box-shadow: 5px 5px 5px grey;
-  border-radius: 15px;
-  overflow: auto;
-  resize: horizontal;  //both;
-  //resize: both;
-}*/
 
 #chatborder {
   border-style: solid;
@@ -120,6 +98,7 @@ body {
 .textinput {
    //margin-left: 5px;
    //margin-right: 5px;
+  //text-align: left:
 }
 
 .helpImage {
