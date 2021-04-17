@@ -128,10 +128,12 @@ function displayBotMessages(parsedBotMessage) {
     for (var i = 0; i < parsedBotMessage.messages.length; i++) {
         if (i == 0) {
             document.getElementById("conversation").innerHTML += "<b>" + botName + ":</b> " + parsedBotMessage.messages[i].label + "<br>";
+            //2do: get the keyword at the end of the string. Save it for us as key prefix in localStorage
         } else {
             if (parsedBotMessage.messages[i].label != "") {
                 document.getElementById("conversation").innerHTML += parsedBotMessage.messages[i].label + "<br>";
                 Speech(parsedBotMessage.messages[i].label);
+                //2do: save the label in localStorage with keyword+index as key
             }
 
             if (parsedBotMessage.messages[i].link != "") {
@@ -145,6 +147,7 @@ function displayBotMessages(parsedBotMessage) {
                 tempInnerHtml += parsedBotMessage.messages[i].link + "&nbsp;&nbsp;<i>(" +
                 parsedBotMessage.messages[i].publisheddate + ")</i><br><br>" + SPAN_END;
                 document.getElementById("conversation").innerHTML += tempInnerHtml;
+                //2do: save the label in localStorage with keyword+index as key
                 Speech(extractContent(parsedBotMessage.messages[i].link));
                 setLinkColor(linkCount);
                 linkCount++;
