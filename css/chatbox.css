@@ -37,7 +37,8 @@ body {
 
 #bodybox {
   //margin-top: 35px;
-  width: 400px;
+  //width: 400px;
+  width: 300px;
   font: 15px arial, sans-serif;
   background-color: white;
   border-style: solid;
@@ -52,9 +53,10 @@ body {
   //resize: horizontal;  //both;
   //direction: rtl;
   position: fixed;
+  //top: 100px;
   right: 0;
-  margin-bottom: 100px;
-  bottom: 100;
+  //margin-bottom: 100px;
+  bottom: 60px;
 }
 
 #chatborder {
