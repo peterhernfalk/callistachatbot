@@ -42,14 +42,6 @@
 </section>
 
 <script>
-    //http://diveintohtml5.info/storage.html
-    //https://html.spec.whatwg.org/multipage/webstorage.html
-    /*if (window['localStorage'] !== null) {
-      alert("window.localStorage is available!");
-    } else {
-      alert("no native support for HTML5 storage :(");
-    }*/
-
     //-----Global script variables
     var botId = "1";
     var displayBlogCategories = false;
@@ -57,6 +49,13 @@
     var nodeurl = getNodeUrl(botId);
     var result = "";
     var terminalLayout = false;
+    var hasLocalStorage = false;
+
+    //http://diveintohtml5.info/storage.html
+    //https://html.spec.whatwg.org/multipage/webstorage.html
+    if (window['localStorage'] !== null) {
+      hasLocalStorage = true;
+    }
 
     //-----Initial settings
     //setLanguage(nodeurl+'/language', '46')
