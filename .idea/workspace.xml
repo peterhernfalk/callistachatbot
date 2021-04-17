@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f84e1db2-d888-44dd-b412-6dc376a152f7" name="Default Changelist" comment="Cleanup">
-      <change afterPath="$PROJECT_DIR$/images/chatbot_icon1.jpg" afterDir="false" />
+    <list default="true" id="f84e1db2-d888-44dd-b412-6dc376a152f7" name="Default Changelist" comment="Chat icon on activation button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/chatbox.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/chatbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/chatbox.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618584391573</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Chat icon on activation button">
+      <created>1618641172245</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1618641172245</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +142,7 @@
     <MESSAGE value="new file" />
     <MESSAGE value="changed reference" />
     <MESSAGE value="Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
+    <MESSAGE value="Chat icon on activation button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chat icon on activation button" />
   </component>
 </project>
