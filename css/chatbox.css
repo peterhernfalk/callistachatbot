@@ -17,7 +17,8 @@ body {
         -o-background-size: cover;
         background-size: cover;
         }
-        #container { width: 600px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+        #container { width: 600px; margin: 50px auto; padding: 20px; background: white;
+        -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
 
 
 /*body {
@@ -27,7 +28,34 @@ body {
   padding-bottom: 15px;
 }*/
 
+#CallistaChat {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border: none;
+}
+
 #bodybox {
+  margin-top: 35px;
+  width: 400px;
+  font: 15px arial, sans-serif;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 15px;
+  overflow: auto;
+  resize: horizontal;  //both;
+  position: fixed;
+  right: 0;
+  bottom: 1000;
+}
+
+/*#bodybox {
   //margin: auto;
   //margin-left: 1000px;
   //margin-right: 100px;
@@ -47,7 +75,7 @@ body {
   overflow: auto;
   resize: horizontal;  //both;
   //resize: both;
-}
+}*/
 
 #chatborder {
   border-style: solid;
