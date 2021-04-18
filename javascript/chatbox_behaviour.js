@@ -8,6 +8,7 @@ var botName = 'Callista';
 var COLOR_SCHEME_DEFAULT = 1;
 var COLOR_SCHEME_TERMINAL = 2;
 var displayPresentationInfo = false;
+var KEYWORD_KEY_IN_STORAGE = "keywords";
 var lastUserMessage = "";
 var LINK_COLOR_DEFAULT = "blue";
 var LINK_COLOR_TERMINAL = "green";
@@ -123,22 +124,87 @@ function getResponseFromChatbot() {
 }
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
+function saveResponseInStorage(key,value) {
+    localStorage[key] = value;
+    //Works, but the keys are stored in the wrong order
+    //aws-11,aws-10,aws-3,aws-8,aws-9,aws-2,aws-5,aws-7,aws-1,aws-4,aws-6
+}
+function updateKeywordListInStorage(keyword) {
+    var keywordListExists = localStorage.hasOwnProperty(KEYWORD_KEY_IN_STORAGE);
+    //alert("KEYWORD_KEY_IN_STORAGE: " + KEYWORD_KEY_IN_STORAGE + " " + keywordListExists);
+    if (keywordListExists == true) {
+        keywordList = localStorage[KEYWORD_KEY_IN_STORAGE] + "," + keyword;
+    } else {
+        keywordList = keyword;
+    }
+    localStorage[KEYWORD_KEY_IN_STORAGE] = keywordList;
+    //alert("keywordList: " + keywordList);
+}
+function getStorageSize() {
+    var storageSize = parseInt(localStorage.length);
+    return storageSize;
+}
+/*function getAllResponsesFromStorage() {
+    var localStorageContent = "";
+    for (var i = 0; i < localStorage.length; i++) {
+        localStorageContent += localStorage.key(i) + ": " + localStorage.getItem(localStorage.key(i)) + "\n\n";
+    }
+    alert(localStorageContent);
+    var arrayOfKeys = Object.keys(localStorage);
+    //alert(arrayOfKeys);
+}*/
+function getSortedlResponsesFromStorage() {
+    var localStorageContent = "";
+    var keywordList = localStorage[KEYWORD_KEY_IN_STORAGE];
+    var keywordArray = keywordList.split(',');
+    for (var i = 0; i < keywordArray.length; i++) {
+        for (var j = 1; j < localStorage.length; j++) {
+            var localStorageKey = keywordArray[i]+"-"+j.toString();
+            if (localStorage[localStorageKey] != null) {
+                //localStorageContent += localStorageKey + ": " + localStorage[localStorageKey] + "\n\n";
+                localStorageContent += localStorage[localStorageKey] + " ";
+            } else {
+                break;
+            }
+        }
+    }
+    return localStorageContent;
+}
+function clearStorage() {
+    localStorage.clear();
+    alert("Tömmer localStorage, som nu har " + localStorage.length + " poster sparade.");
+}
 
 function displayBotMessages(parsedBotMessage) {
+    var keyword = "";
+    var keyword_number = 1;
     for (var i = 0; i < parsedBotMessage.messages.length; i++) {
         if (i == 0) {
             document.getElementById("conversation").innerHTML += "<b>" + botName + ":</b> " + parsedBotMessage.messages[i].label + "<br>";
             if (hasLocalStorage == true) {
-                //2do: get the keyword at the end of the string. Save it for us as key prefix in localStorage
+                keyword = parsedBotMessage.messages[i].label.split(" ").pop();
+                updateKeywordListInStorage(keyword);
             }
         } else {
             if (parsedBotMessage.messages[i].label != "") {
+                if (parsedBotMessage.messages[i].label.startsWith("Varsågod") && hasLocalStorage == true) {
+                    document.getElementById("conversation").innerHTML += parsedBotMessage.messages[i].label + "<br>";
+                    keyword = parsedBotMessage.messages[i].label.split(" ").pop();
+                    updateKeywordListInStorage(keyword);
+                    keyword_number = 1;
+                }
+            }
+            /*if (parsedBotMessage.messages[i].label != "") {
                 document.getElementById("conversation").innerHTML += parsedBotMessage.messages[i].label + "<br>";
                 Speech(parsedBotMessage.messages[i].label);
                 if (hasLocalStorage == true) {
-                    //2do: save the label in localStorage with keyword+index as key
+                    key = keyword + "-" + keyword_number.toString();
+                    value = tempInnerHtml;
+                    saveResponseInStorage(key,value);
+                    saveResponseInStorage(keyword, keyword_number);
+                    keyword_number += 1;
                 }
-            }
+            }*/
 
             if (parsedBotMessage.messages[i].link != "") {
                 var tempInnerHtml = SPAN_BEGINNING;
@@ -152,7 +218,10 @@ function displayBotMessages(parsedBotMessage) {
                 parsedBotMessage.messages[i].publisheddate + ")</i><br><br>" + SPAN_END;
                 document.getElementById("conversation").innerHTML += tempInnerHtml;
                 if (hasLocalStorage == true) {
-                    //2do: save the label in localStorage with keyword+index as key
+                    key = keyword + "-" + keyword_number.toString();
+                    value = tempInnerHtml;
+                    saveResponseInStorage(key,value);
+                    keyword_number += 1;
                 }
                 Speech(extractContent(parsedBotMessage.messages[i].link));
                 setLinkColor(linkCount);
@@ -161,7 +230,21 @@ function displayBotMessages(parsedBotMessage) {
         }
     }
     document.getElementById("conversation").scrollTop = document.getElementById("conversation").scrollHeight;
+    //alert("Storage size: " + parseInt(getStorageSize()));
+    //getAllResponsesFromStorage();
+    //clearStorage();
+    //alert("Storage size: " + parseInt(getStorageSize()));
+}
 
+function displayBotMessagesFromStorage() {
+    var storedMessages = getSortedlResponsesFromStorage();
+    var storedMessagesArray = storedMessages.split("<span>");
+    document.getElementById("conversation").innerHTML = "";
+        for (var i = 0; i < storedMessages.length; i++) {
+            if (storedMessagesArray[i].length > 0) {
+                document.getElementById("conversation").innerHTML += storedMessagesArray[i];
+            }
+        }
 }
 
 function displayHelpInfo() {
@@ -173,6 +256,8 @@ function displayHelpInfo() {
 
 function displayCommandInfo() {
     document.getElementById("conversation").innerHTML += "<br><b><i>Chatbot-kommandon:</b><br>" +
+    "auto &nbsp;&nbsp; Fyller chatrutan med sparade chatbotmeddelanden<br>" +
+    "clear &nbsp;&nbsp; Tar bort sparadechatbotmeddelanden från webbläsarens storage<br>" +
     "cmd &nbsp;&nbsp; Visar vilka kommandon som stöds av chatboten<br>" +
     "color-1 eller c1 &nbsp;&nbsp; Standard-utseende aktiverat<br>" +
     "color-2 eller c2 &nbsp;&nbsp; Terminal-utseende aktiverat<br>" +
@@ -212,6 +297,14 @@ function displayTeasers(parsedBotMessage) {
 function chatboxCommand(userInput) {
     commandExecuted = false;
     switch (userInput.toLowerCase()) {
+        case "auto":
+            displayBotMessagesFromStorage();
+            commandExecuted = true;
+            break;
+        case "clear":
+            clearStorage();
+            commandExecuted = true;
+            break;
         case "cmd":
             displayCommandInfo();
             commandExecuted = true;

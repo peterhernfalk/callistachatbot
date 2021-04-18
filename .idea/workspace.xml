@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f84e1db2-d888-44dd-b412-6dc376a152f7" name="Default Changelist" comment="Preparations before use of localStorage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/chatbox.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascript/chatbox_behaviour.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/chatbox_behaviour.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +17,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1qOAimCceisNUW69yV2NI7S8Xp2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -148,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618654869310</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Preparations before use of localStorage">
+      <created>1618656292454</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1618656292454</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
