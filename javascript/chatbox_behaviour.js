@@ -172,7 +172,9 @@ function getSortedlResponsesFromStorage() {
 }
 function clearStorage() {
     localStorage.clear();
-    alert("Tömmer localStorage, som nu har " + localStorage.length + " poster sparade.");
+    //alert("Tömmer localStorage, som nu har " + localStorage.length + " poster sparade.");
+    document.getElementById("conversation").innerHTML += "Webbläsarens localStorage är nu tömt.";
+
 }
 
 function displayBotMessages(parsedBotMessage) {
