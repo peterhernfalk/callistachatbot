@@ -233,10 +233,6 @@ function displayBotMessages(parsedBotMessage) {
         }
     }
     document.getElementById("conversation").scrollTop = document.getElementById("conversation").scrollHeight;
-    //alert("Storage size: " + parseInt(getStorageSize()));
-    //getAllResponsesFromStorage();
-    //clearStorage();
-    //alert("Storage size: " + parseInt(getStorageSize()));
 }
 
 function displayBotMessagesFromStorage() {
