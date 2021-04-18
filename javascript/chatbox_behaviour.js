@@ -182,32 +182,33 @@ function displayBotMessages(parsedBotMessage) {
     var keyword_number = 1;
     for (var i = 0; i < parsedBotMessage.messages.length; i++) {
         if (i == 0) {
-            document.getElementById("conversation").innerHTML += "<b>" + botName + ":</b> " + parsedBotMessage.messages[i].label + "<br>";
-            if (hasLocalStorage == true) {
+            var thisMessage = "<b>" + botName + ":</b> " + parsedBotMessage.messages[i].label + "<br>";
+            document.getElementById("conversation").innerHTML += thisMessage;
+            if (parsedBotMessage.messages[i].label.startsWith("Varsågod") && hasLocalStorage == true) {
                 keyword = parsedBotMessage.messages[i].label.split(" ").pop();
                 updateKeywordListInStorage(keyword);
+
+                keyword_number = 1;
+                key = keyword + "-" + keyword_number.toString();
+                value = thisMessage;
+                saveResponseInStorage(key,value);
+                keyword_number += 1;
             }
         } else {
             if (parsedBotMessage.messages[i].label != "") {
                 if (parsedBotMessage.messages[i].label.startsWith("Varsågod") && hasLocalStorage == true) {
-                    document.getElementById("conversation").innerHTML += parsedBotMessage.messages[i].label + "<br>";
+                    var thisMessage = "<b>" + botName + ":</b> " + parsedBotMessage.messages[i].label + "<br>";
+                    document.getElementById("conversation").innerHTML += thisMessage;
                     keyword = parsedBotMessage.messages[i].label.split(" ").pop();
                     updateKeywordListInStorage(keyword);
                     keyword_number = 1;
-                }
-            }
-            /*if (parsedBotMessage.messages[i].label != "") {
-                document.getElementById("conversation").innerHTML += parsedBotMessage.messages[i].label + "<br>";
-                Speech(parsedBotMessage.messages[i].label);
-                if (hasLocalStorage == true) {
+
                     key = keyword + "-" + keyword_number.toString();
-                    value = tempInnerHtml;
+                    value = thisMessage;
                     saveResponseInStorage(key,value);
-                    saveResponseInStorage(keyword, keyword_number);
                     keyword_number += 1;
                 }
-            }*/
-
+            }
             if (parsedBotMessage.messages[i].link != "") {
                 var tempInnerHtml = SPAN_BEGINNING;
                 if (getBloggCategory(parsedBotMessage.messages[i]) == LABEL_PRESENTATION) {
