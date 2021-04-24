@@ -477,4 +477,5 @@ function showHideChatbox() {
 
 function placeHolder() {
   document.getElementById("chatbox").placeholder = "";
+  displayBotMessagesFromStorage();
 }
