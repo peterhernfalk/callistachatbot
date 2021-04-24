@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f84e1db2-d888-44dd-b412-6dc376a152f7" name="Default Changelist" comment="An icon in the chatbox for accessing the clear function">
-      <change beforePath="$PROJECT_DIR$/javascript/chatbox_behaviour.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/chatbox_behaviour.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619269675628</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="An icon in the chatbox for accessing the clear function">
+      <created>1619269765665</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1619269765665</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
