@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f84e1db2-d888-44dd-b412-6dc376a152f7" name="Default Changelist" comment="AN icon in the chatbox for accessing the clear function">
+    <list default="true" id="f84e1db2-d888-44dd-b412-6dc376a152f7" name="Default Changelist" comment="An icon in the chatbox for accessing the clear function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chatbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/chatbox.html" afterDir="false" />
     </list>
@@ -246,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619268672167</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="An icon in the chatbox for accessing the clear function">
+      <created>1619269604829</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1619269604829</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,6 +289,7 @@
     <MESSAGE value="Automatic reload from localStorage" />
     <MESSAGE value="Clear command clears both the chatbox and localStorage" />
     <MESSAGE value="AN icon in the chatbox for accessing the clear function" />
-    <option name="LAST_COMMIT_MESSAGE" value="AN icon in the chatbox for accessing the clear function" />
+    <MESSAGE value="An icon in the chatbox for accessing the clear function" />
+    <option name="LAST_COMMIT_MESSAGE" value="An icon in the chatbox for accessing the clear function" />
   </component>
 </project>
