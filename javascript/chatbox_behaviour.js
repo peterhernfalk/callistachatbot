@@ -255,7 +255,7 @@ function displayHelpInfo() {
 
 function displayCommandInfo() {
     document.getElementById("conversation").innerHTML += "<br><b><i>Chatbot-kommandon:</b><br>" +
-    "auto &nbsp;&nbsp; Fyller chatrutan med sparade chatbotmeddelanden<br>" +
+    //"auto &nbsp;&nbsp; Fyller chatrutan med sparade chatbotmeddelanden<br>" +
     "clear &nbsp;&nbsp; Tar bort sparadechatbotmeddelanden från webbläsarens storage<br>" +
     "cmd &nbsp;&nbsp; Visar vilka kommandon som stöds av chatboten<br>" +
     "color-1 eller c1 &nbsp;&nbsp; Standard-utseende aktiverat<br>" +
@@ -296,10 +296,10 @@ function displayTeasers(parsedBotMessage) {
 function chatboxCommand(userInput) {
     commandExecuted = false;
     switch (userInput.toLowerCase()) {
-        case "auto":
+        /*case "auto":
             displayBotMessagesFromStorage();
             commandExecuted = true;
-            break;
+            break;*/
         case "clear":
             clearStorage();
             commandExecuted = true;
