@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f84e1db2-d888-44dd-b412-6dc376a152f7" name="Default Changelist" comment="Automatic reload from localStorage">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f84e1db2-d888-44dd-b412-6dc376a152f7" name="Default Changelist" comment="Clear command clears both the chatbox and localStorage">
       <change beforePath="$PROJECT_DIR$/javascript/chatbox_behaviour.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/chatbox_behaviour.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -224,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619254810611</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Clear command clears both the chatbox and localStorage">
+      <created>1619255960417</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1619255960417</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,6 +264,7 @@
     <MESSAGE value="New icon" />
     <MESSAGE value="Transparent icon background" />
     <MESSAGE value="Automatic reload from localStorage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Automatic reload from localStorage" />
+    <MESSAGE value="Clear command clears both the chatbox and localStorage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clear command clears both the chatbox and localStorage" />
   </component>
 </project>
