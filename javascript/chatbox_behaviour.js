@@ -22,13 +22,11 @@ var SPAN_END = '</span>';
 var SPAN_PRESENTATION_BEGINNING = '<span class="ce-presentation-tag">';
 var talking = false;
 var usedLinkColor = LINK_COLOR_DEFAULT;
-//var messages = [];
 
 
 //////////////////////////////////////////////////
 //////////       Trigger and Main       //////////
 //////////////////////////////////////////////////
-//document.onkeypress = keyPress;
 document.onkeydown = keyPress;
 function keyPress(e) {
   var x = e || window.event;
@@ -82,17 +80,6 @@ function setCaretPosition(ctrl, pos) {
   }
 }
 
-/*function moveCursorToEnd(el) {
-    if (typeof el.selectionStart == "number") {
-        el.selectionStart = el.selectionEnd = el.value.length;
-    } else if (typeof el.createTextRange != "undefined") {
-        el.focus();
-        var range = el.createTextRange();
-        range.collapse(false);
-        range.select();
-    }
-}*/
-
 function newUserRequest() {
     if (document.getElementById("chatbox").value != "") {
         lastUserMessage = document.getElementById("chatbox").value;
@@ -126,33 +113,21 @@ function getResponseFromChatbot() {
 //////////////////////////////////////////////////
 function saveResponseInStorage(key,value) {
     localStorage[key] = value;
-    //Works, but the keys are stored in the wrong order
-    //aws-11,aws-10,aws-3,aws-8,aws-9,aws-2,aws-5,aws-7,aws-1,aws-4,aws-6
 }
 function updateKeywordListInStorage(keyword) {
     var keywordListExists = localStorage.hasOwnProperty(KEYWORD_KEY_IN_STORAGE);
-    //alert("KEYWORD_KEY_IN_STORAGE: " + KEYWORD_KEY_IN_STORAGE + " " + keywordListExists);
     if (keywordListExists == true) {
         keywordList = localStorage[KEYWORD_KEY_IN_STORAGE] + "," + keyword;
     } else {
         keywordList = keyword;
     }
     localStorage[KEYWORD_KEY_IN_STORAGE] = keywordList;
-    //alert("keywordList: " + keywordList);
 }
 function getStorageSize() {
     var storageSize = parseInt(localStorage.length);
     return storageSize;
 }
-/*function getAllResponsesFromStorage() {
-    var localStorageContent = "";
-    for (var i = 0; i < localStorage.length; i++) {
-        localStorageContent += localStorage.key(i) + ": " + localStorage.getItem(localStorage.key(i)) + "\n\n";
-    }
-    alert(localStorageContent);
-    var arrayOfKeys = Object.keys(localStorage);
-    //alert(arrayOfKeys);
-}*/
+
 function getSortedlResponsesFromStorage() {
     var localStorageContent = "";
     var keywordList = localStorage[KEYWORD_KEY_IN_STORAGE];
@@ -255,8 +230,6 @@ function displayHelpInfo() {
 
 function displayCommandInfo() {
     document.getElementById("conversation").innerHTML += "<br><b><i>Chatbot-kommandon:</b><br>" +
-    //"auto &nbsp;&nbsp; Fyller chatrutan med sparade chatbotmeddelanden<br>" +
-    //"clear &nbsp;&nbsp; Tar bort sparadechatbotmeddelanden från webbläsarens storage<br>" +
     "cmd &nbsp;&nbsp; Visar vilka kommandon som stöds av chatboten<br>" +
     "color-1 eller c1 &nbsp;&nbsp; Standard-utseende aktiverat<br>" +
     "color-2 eller c2 &nbsp;&nbsp; Terminal-utseende aktiverat<br>" +
@@ -296,14 +269,6 @@ function displayTeasers(parsedBotMessage) {
 function chatboxCommand(userInput) {
     commandExecuted = false;
     switch (userInput.toLowerCase()) {
-        /*case "auto":
-            displayBotMessagesFromStorage();
-            commandExecuted = true;
-            break;
-        case "clear":
-            clearStorage();
-            commandExecuted = true;
-            break;*/
         case "cmd":
             displayCommandInfo();
             commandExecuted = true;
@@ -399,7 +364,7 @@ function setColorScheme(colorScheme) {
 }
 
 function getBloggCategory(botMessage) {
-    category = "";
+    var category = "";
 
     switch (botMessage.linkcategory) {
         case "callista":
@@ -446,8 +411,6 @@ function speechUsage() {
     talking = document.getElementById("useSpeech").checked;
 }
 
-//text to Speech
-//https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API
 function Speech(say) {
   if ('speechSynthesis' in window && talking) {
     var utterance = new SpeechSynthesisUtterance(say);
