@@ -1,5 +1,5 @@
 
-    // 2do
+    // 2do: add support for two backend services
     function getNodeUrl(botId) {
         return "https://callistabackend.herokuapp.com";
     }
@@ -35,6 +35,4 @@
         http.send(JSON.stringify(params));
 
         return http.responseText;
-
-
     }
