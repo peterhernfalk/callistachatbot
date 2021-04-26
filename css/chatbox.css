@@ -139,6 +139,12 @@ body {
     right: 0;
 }
 
+.closeWindow {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+
 #chatbox {
   font: 17px arial, sans-serif;
   height: 22px;
